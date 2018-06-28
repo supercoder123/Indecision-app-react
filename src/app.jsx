@@ -3,63 +3,49 @@ console.log("This is app.js : running")
 const app = {
   title:"Indecision App",
   subtitle:"I am awesome",
-  options:['One','Two']
+  options:[]
 }
 
-
-//JSX
-const template =
-    <div>
-    <h1>{app.title}</h1>
-    {app.subtitle && <p>{app.subtitle}</p>}
-    {app.options.length > 0 ? <p>"here are your options:"{app.options}</p>:<p>"No Options"</p>}
-    <ol>
-      <li>Item 1</li>
-      <li>Item 2</li>
-    </ol>
-   </div>
-
-const user = {
-  name:"Ashley",
-  age:22,
-  loc:"USA"
-}
-
-function getLocation(location){
-  if(location){
-    return <p>Location: {location}</p>;
-  }else{
-  return 'Unknown';
+const onFormSubmit = (p) =>{
+  p.preventDefault();
+  const option = p.target.elements.option.value;
+  if(option){
+    app.options.push(option);
+    p.target.elements.option.value = " "
   }
+  console.log("form submit " + app.options);
+  renderFunction();
 }
-
-let count = 0;
 
 const appRoot = document.getElementById("app");
 
-const renderFunction = () => {
-  const templateTwo =                       //use className for jsx
-    <div>
-      <h1>Count: {count}</h1>
-      <button onClick={() => {
-            console.log("addOne");
-            count++;
-            renderFunction();
-            }}>+1</button>
-      <button onClick={() => {
-            count--;
-            renderFunction();
-            console.log("minusOne");
-            }}>-1</button>
-      <button onClick={() => {
-            count = 0;
-            renderFunction();
-            console.log("reset");
-            }}>reset</button>
-    </div>
+const buttonReset = () =>{
+  app.options = [];
+  renderFunction();
+  console.log("button reset");
+};
+const renderFunction = () =>{
+  const template =
+      <div>
+      <h1>{app.title}</h1>
+      {app.subtitle && <p>{app.subtitle}</p>}
+      <p>{app.options.length > 0 ? "here are your option": "No Options"}</p>
+      <p>{app.options.length}</p>
+      <button onClick={buttonReset}>Reset</button>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ol>
+      <form onSubmit={onFormSubmit}>
+        <input type="text" name="option"></input>
+        <button>Add Option</button>
 
-    ReactDOM.render(templateTwo,appRoot)
+      </form>
+     </div>
 
+     ReactDOM.render(template,appRoot);
 }
+//JSX
+
 
 renderFunction();
