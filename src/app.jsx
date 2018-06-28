@@ -24,6 +24,7 @@ const buttonReset = () =>{
   renderFunction();
   console.log("button reset");
 };
+
 const renderFunction = () =>{
   const template =
       <div>
@@ -33,13 +34,15 @@ const renderFunction = () =>{
       <p>{app.options.length}</p>
       <button onClick={buttonReset}>Reset</button>
       <ol>
-        <li>Item 1</li>
-        <li>Item 2</li>
+        {
+          app.options.map((x) => {
+            return <li key={x}>{x}</li>
+          })
+        }
       </ol>
       <form onSubmit={onFormSubmit}>
         <input type="text" name="option"></input>
         <button>Add Option</button>
-
       </form>
      </div>
 

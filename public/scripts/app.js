@@ -26,6 +26,7 @@ var buttonReset = function buttonReset() {
   renderFunction();
   console.log("button reset");
 };
+
 var renderFunction = function renderFunction() {
   var template = React.createElement(
     "div",
@@ -58,16 +59,13 @@ var renderFunction = function renderFunction() {
     React.createElement(
       "ol",
       null,
-      React.createElement(
-        "li",
-        null,
-        "Item 1"
-      ),
-      React.createElement(
-        "li",
-        null,
-        "Item 2"
-      )
+      app.options.map(function (x) {
+        return React.createElement(
+          "li",
+          { key: x },
+          x
+        );
+      })
     ),
     React.createElement(
       "form",
