@@ -2,19 +2,34 @@
 
 console.log("This is app.js : running");
 
-//JSX
-var template = React.createElement(
+var app = {
+  title: "Indecision App",
+  subtitle: "I am awesome",
+  options: ['One', 'Two']
+
+  //JSX
+};var template = React.createElement(
   "div",
   null,
   React.createElement(
     "h1",
     null,
-    "Hello World"
+    app.title
   ),
-  React.createElement(
+  app.subtitle && React.createElement(
     "p",
     null,
-    "Everything works now"
+    app.subtitle
+  ),
+  app.options.length > 0 ? React.createElement(
+    "p",
+    null,
+    "\"here are your options:\"",
+    app.options
+  ) : React.createElement(
+    "p",
+    null,
+    "\"No Options\""
   ),
   React.createElement(
     "ol",
@@ -32,27 +47,45 @@ var template = React.createElement(
   )
 );
 
+var user = {
+  name: "Ashley",
+  age: 22,
+  loc: "USA"
+};
+
+function getLocation(location) {
+  if (location) {
+    return React.createElement(
+      "p",
+      null,
+      "Location: ",
+      location
+    );
+  } else {
+    return 'Unknown';
+  }
+}
+
+var name = "Ashley Fernandes";
+var age = "2";
+var loc = "usa";
 var templateTwo = React.createElement(
   "div",
   null,
   React.createElement(
     "h1",
     null,
-    "Ashley Fernandes"
+    user.name ? user.name : "Anonymous"
   ),
-  React.createElement(
+  user.age && user.age >= 18 && React.createElement(
     "p",
     null,
-    "Age: 22"
+    "Age: ",
+    user.age
   ),
-  React.createElement(
-    "p",
-    null,
-    "Location : Mumbai"
-  )
+  getLocation(user.loc)
 );
 
 var appRoot = document.getElementById("app");
-ReactDOM.render(template, appRoot);
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
