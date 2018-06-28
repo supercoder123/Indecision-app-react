@@ -33,16 +33,22 @@ function getLocation(location){
   }
 }
 
-const name = "Ashley Fernandes"
-const age = "2"
-const loc = "usa"
-const templateTwo =
+const addOne = (x) => {
+  console.log("addOne" + x);
+}
+let count = 0;
+const templateTwo =                       //use className for jsx
   <div>
-    <h1>{user.name ? user.name : "Anonymous"}</h1>
-    {(user.age && user.age >= 18 )&& <p>Age: {user.age}</p>}
-    {getLocation(user.loc)}
+    <h1>Count: {count}</h1>
+    <button onClick={addOne}>+1</button>
+    <button onClick={() => {
+        console.log("minusOne");
+    }}>-1</button>
+  <button onClick={() => {
+        console.log("reset");
+  }}>reset</button>
   </div>
 
 const appRoot = document.getElementById("app");
 
-ReactDOM.render(template,appRoot)
+ReactDOM.render(templateTwo,appRoot)
