@@ -1,24 +1,23 @@
-'use strict';
+"use strict";
 
-// const square = (x) => {          //long syntax
-//   return x * x;
-// };
-// console.log(square(9));
-//
-// const squareNew = (x) => x*x;     //short syntax
-//
-// console.log(squareNew(6));
+//arguments object
+var add = function functionName() {};
 
-var name = "Ashley Fernandes";
+//this keyword
 
-var getFirstName = function getFirstName(x) {
-  var firstName = x.split(' ')[0];
-  return firstName;
+var multiplier = {
+  //numbers array
+  //multiplyby - single numbers
+  //
+  numbers: [3, 4, 2, 5, 6, 2, 8],
+  multiplyby: 2,
+  multiply: function multiply() {
+    var _this = this;
+
+    return this.numbers.map(function (x) {
+      return x * _this.multiplyby;
+    });
+  }
 };
 
-console.log(getFirstName(name));
-
-var getFirstNameShort = function getFirstNameShort(x) {
-  return x.split(' ')[0];
-};
-console.log(getFirstNameShort(name));
+console.log(multiplier.multiply());
