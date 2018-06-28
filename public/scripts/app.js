@@ -66,41 +66,51 @@ function getLocation(location) {
   }
 }
 
-var addOne = function addOne(x) {
-  console.log("addOne" + x);
-};
 var count = 0;
-var templateTwo = //use className for jsx
-React.createElement(
-  "div",
-  null,
-  React.createElement(
-    "h1",
-    null,
-    "Count: ",
-    count
-  ),
-  React.createElement(
-    "button",
-    { onClick: addOne },
-    "+1"
-  ),
-  React.createElement(
-    "button",
-    { onClick: function onClick() {
-        console.log("minusOne");
-      } },
-    "-1"
-  ),
-  React.createElement(
-    "button",
-    { onClick: function onClick() {
-        console.log("reset");
-      } },
-    "reset"
-  )
-);
 
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(templateTwo, appRoot);
+var renderFunction = function renderFunction() {
+  var templateTwo = //use className for jsx
+  React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "h1",
+      null,
+      "Count: ",
+      count
+    ),
+    React.createElement(
+      "button",
+      { onClick: function onClick() {
+          console.log("addOne");
+          count++;
+          renderFunction();
+        } },
+      "+1"
+    ),
+    React.createElement(
+      "button",
+      { onClick: function onClick() {
+          count--;
+          renderFunction();
+          console.log("minusOne");
+        } },
+      "-1"
+    ),
+    React.createElement(
+      "button",
+      { onClick: function onClick() {
+          count = 0;
+          renderFunction();
+          console.log("reset");
+        } },
+      "reset"
+    )
+  );
+
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderFunction();

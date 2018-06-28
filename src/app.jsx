@@ -33,22 +33,33 @@ function getLocation(location){
   }
 }
 
-const addOne = (x) => {
-  console.log("addOne" + x);
-}
 let count = 0;
-const templateTwo =                       //use className for jsx
-  <div>
-    <h1>Count: {count}</h1>
-    <button onClick={addOne}>+1</button>
-    <button onClick={() => {
-        console.log("minusOne");
-    }}>-1</button>
-  <button onClick={() => {
-        console.log("reset");
-  }}>reset</button>
-  </div>
 
 const appRoot = document.getElementById("app");
 
-ReactDOM.render(templateTwo,appRoot)
+const renderFunction = () => {
+  const templateTwo =                       //use className for jsx
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => {
+            console.log("addOne");
+            count++;
+            renderFunction();
+            }}>+1</button>
+      <button onClick={() => {
+            count--;
+            renderFunction();
+            console.log("minusOne");
+            }}>-1</button>
+      <button onClick={() => {
+            count = 0;
+            renderFunction();
+            console.log("reset");
+            }}>reset</button>
+    </div>
+
+    ReactDOM.render(templateTwo,appRoot)
+
+}
+
+renderFunction();
