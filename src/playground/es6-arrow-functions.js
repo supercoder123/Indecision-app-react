@@ -1,5 +1,3 @@
-'use strict';
-
 // const square = (x) => {          //long syntax
 //   return x * x;
 // };
@@ -9,16 +7,14 @@
 //
 // console.log(squareNew(6));
 
-var name = "Ashley Fernandes";
+let name  = "Ashley Fernandes"
 
-var getFirstName = function getFirstName(x) {
-  var firstName = x.split(' ')[0];
+const getFirstName = (x) =>{
+  let firstName = x.split(' ')[0];
   return firstName;
-};
+}
 
 console.log(getFirstName(name));
 
-var getFirstNameShort = function getFirstNameShort(x) {
-  return x.split(' ')[0];
-};
+const getFirstNameShort = (x) => x.split(' ')[0];
 console.log(getFirstNameShort(name));
