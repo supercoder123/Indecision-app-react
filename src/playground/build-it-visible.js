@@ -8,7 +8,7 @@ const renderFunction = () => {
               <button onClick={toggle}>{flag?"Show text":"Hide text"}</button>
               <p hidden={flag}>This is a piece of text</p>
               </div>
-
+              
               ReactDOM.render(header,appRoot)
 
 };
