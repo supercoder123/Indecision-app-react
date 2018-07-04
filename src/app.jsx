@@ -156,7 +156,7 @@ const Option = (props) => {
     <div>
      {props.optionText}
      <button
-       onClick={(e) => {
+       onClick={(e) => {   //works without e parameter
         props.handleDeleteOption(props.optionText);
        }}
        >

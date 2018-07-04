@@ -205,6 +205,7 @@ var Option = function Option(props) {
       "button",
       {
         onClick: function onClick(e) {
+          //works without e parameter
           props.handleDeleteOption(props.optionText);
         }
       },
