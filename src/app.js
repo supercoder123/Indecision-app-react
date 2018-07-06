@@ -1,5 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import IndecisionApp from "./components/IndecisionApp";
+// class Option extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//        {this.props.optionText}
+//       </div>
+//     );
+//   }
+// }
 
-const template = React.createElement("p", {}, "testing 123");
-ReactDOM.render(template, document.getElementById("app"));
+ReactDOM.render(<IndecisionApp />, document.getElementById("app"));
