@@ -1,10 +1,15 @@
 console.log("this is utils.js");
-const square = x => {
+export const square = x => {
   return x * x;
 };
 
-const add = (x, y) => {
+export const add = (x, y) => {
   return x + y;
 };
 
-export { square, add };
+export default (a, b) => {
+  return a - b;
+};
+
+//export { square, add, subtract as default };
+//default export subtract
