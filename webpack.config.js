@@ -12,6 +12,10 @@ module.exports = {
         loader: "babel-loader",
         test: /\.js$/,
         exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
@@ -20,6 +24,3 @@ module.exports = {
     contentBase: path.join(__dirname, "public")
   }
 };
-//loader
-
-  
