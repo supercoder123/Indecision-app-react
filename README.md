@@ -12,3 +12,27 @@
 - JSX
 - SCSS
 - Webpack
+
+### Installation
+
+##### 1. Download the repository and also install [NodeJs](https://nodejs.org/en/)
+
+Clone the base repository onto your desktop with `git` as follows:
+
+```console
+$ git clone https://github.com/supercoder123/indecsion-app-react.git
+```
+
+##### 2. Install the dependencies
+
+```
+$ npm install
+```
+
+##### 3. Start the server
+
+```
+$ npm run dev-server
+```
+
+##### 4. Navigate to `http://localhost:8080/`
