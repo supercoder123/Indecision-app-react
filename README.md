@@ -2,16 +2,18 @@
 
 > _Ever felt confused about what to do in life, just add all the available options in here and let the app make the decision for you_
 
-![](Screenshot1.jpg)
+![Main Screen](Screenshot1.jpg)
 
-![](Screenshot2.jpg)
+![Modal Screen](Screenshot2.jpg)
 
-## Stuff used:
+## Libraries, languages and buildtools:
 
 - Html
 - JSX
 - SCSS
 - Webpack
+- react-modal
+- babel
 
 ### Installation
 
