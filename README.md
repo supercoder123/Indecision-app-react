@@ -27,9 +27,9 @@ $ git clone https://github.com/supercoder123/Indecision-app-react.git
 
 ##### 2. Navigate to project folder
 
-'''
+```
 $ cd Indecision-app-react
-'''
+```
 
 ##### 3. Install the dependencies
 
