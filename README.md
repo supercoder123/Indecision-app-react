@@ -21,20 +21,26 @@
 
 Clone the base repository onto your desktop with `git` as follows:
 
-```console
-$ git clone https://github.com/supercoder123/indecsion-app-react.git
+```
+$ git clone https://github.com/supercoder123/Indecision-app-react.git
 ```
 
-##### 2. Install the dependencies
+##### 2. Navigate to project folder
+
+```
+$ cd Indecision-app-react
+```
+
+##### 3. Install the dependencies
 
 ```
 $ npm install
 ```
 
-##### 3. Start the server
+##### 4. Start the server
 
 ```
 $ npm run dev-server
 ```
 
-##### 4. Navigate to `http://localhost:8080/`
+##### 5. Open the link `http://localhost:8080/` in the browser
