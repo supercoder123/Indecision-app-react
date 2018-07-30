@@ -19,7 +19,7 @@
 
 ##### 1. Download the repository and also install [NodeJs](https://nodejs.org/en/)
 
-Clone the base repository onto your desktop with `git` as follows:
+Clone the base repository onto your machine with `git` as follows:
 
 ```
 $ git clone https://github.com/supercoder123/Indecision-app-react.git
