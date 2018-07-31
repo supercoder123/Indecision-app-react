@@ -1,5 +1,8 @@
 # Indecsion-app-react [![Build Status](https://travis-ci.org/supercoder123/Indecision-app-react.svg?branch=master)](https://travis-ci.org/supercoder123/Indecision-app-react)
 
+#### Latest url : https://indecision-app-react.now.sh/
+
+
 > _Ever felt confused about what to do in life, just add all the available options in here and let the app make the decision for you_
 
 ![Main Screen](Screenshot1.jpg)
