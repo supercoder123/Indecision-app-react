@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "serve": "live-server public/",
+    "now-start": "serve --single ./public",
     "build": "webpack",
     "dev-server": "webpack-dev-server",
     "start": "webpack-dev-server"
@@ -34,6 +34,7 @@
     "react-dom": "^16.0.0",
     "react-modal": "^2.2.2",
     "sass-loader": "^6.0.6",
+    "serve": "^9.4.0",
     "style-loader": "^0.18.2",
     "url-loader": "^1.0.1",
     "validator": "^10.4.0",
