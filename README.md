@@ -13,7 +13,7 @@
 
 - Html
 - JSX
-- SCSS
+- SCSS (BEM)
 - Webpack
 - react-modal
 - babel
